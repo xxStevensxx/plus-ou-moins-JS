@@ -1,0 +1,51 @@
+*
+Activité : jeu de devinette
+*/
+
+// NE PAS MODIFIER OU SUPPRIMER LES LIGNES CI-DESSOUS
+// COMPLETEZ LE PROGRAMME UNIQUEMENT APRES LE TODO
+
+console.log("Bienvenue dans ce jeu de devinette !");
+
+// Cette ligne génère aléatoirement un nombre entre 1 et 100
+var solution = Math.floor(Math.random() * 100) + 1;
+
+// TODO : complétez le programme
+var nombreSaisie = 0;
+var nombreDeCoups = 0;
+
+
+ var nombreSaisie = Number(prompt ("Entrez un nombre entre 1 et 100 : "));
+
+ if (nombreSaisie < 0 || nombreSaisie > 100)
+   {
+     console.log("Veuillez saisir un nombre entre 1 et 100");
+   }
+
+
+
+ while ((nombreSaisie !== solution) && (nombreDeCoups < 5)) // tant que nombre saisie n'est pas égal à la solution ou nombre de tentatives sup à 6.
+{
+		if (nombreSaisie < solution) // nombre saisi est plus petit que la solution
+		{
+			console.log(nombreSaisie+ " est trop petit !");
+      nombreDeCoups ++;
+		}
+		else if (nombreSaisie > solution) // nombre saisi est plus grand que la solution
+		{
+			console.log(nombreSaisie+ " est trop grand !");
+      nombreDeCoups ++;
+		}
+ var nombreSaisie = Number(prompt ("Entrez un nombre entre 1 et 100 : "));
+}
+
+if (nombreSaisie === solution) // Bonne réponse
+{
+  console.log("Bravo la solution etait bien " + solution);
+  console.log("Vous avez trouvé le nombre mystere en " +nombreDeCoups+ " coups !");
+}
+
+else(nombreDeCoups > 5) // nombre de tentative supérieurs à 6
+{
+  console.log("Votre nombre d'essai disponible a ete atteint ! La solution était " +solution);
+}
